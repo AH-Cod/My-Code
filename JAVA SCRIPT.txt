@@ -1,0 +1,948 @@
+1 - console.log("hello"); Terminal-- node index.js
+2 - // Synchronics
+console.log("start")
+
+function greet(){
+  console.log("hello")
+}
+greet() // calling
+
+console.log("End")
+
+output -
+start
+hello
+End
+
+3 -
+
+// ASynchronics
+console.log("start")
+
+setTimeout(()=>{
+  console.log("Hello after 2 s")
+},2000)
+
+console.log("End")
+
+o/p -
+
+start
+End
+Hello after 2 s
+
+
+   ---------------------------------  BASIC JAVA SCRIPT ------------------------
+
+// Var Variable. (Re-dclaration & Re-assign)
+
+// var a=10;
+// console.log(a);
+
+// var a=20;
+// console.log(a);
+
+// a=30; 
+// console.log(a);
+
+
+
+// Const Variable. ( Not Possible Re-dclaration & Re-assign)
+
+// const a=10;
+// console.log(a)
+
+// // const a=20;  not possible
+
+// // a=30;  not possible
+// console.log(a)
+
+
+
+// Let Variable. (Not Possible Re-dclaration & but can Re-assign)
+
+// let a=10;
+// console.log(a);
+
+// let a=20; not possible
+
+// a=20;
+// console.log(a);
+
+
+
+// const. --> Best pratice. ese bhi block ke bahar use nahi kar sakte hai & esme value bhi nahi change kar sakte hai
+
+// let. --> when value needs to change. means let ko scope ke bahar nahi use kar sakte hai Exp -2
+
+// var. --> due to scope issue. means var ko scope ke bahar use kar sakte hai Exp -1
+
+// if(true){
+//     const x=10;
+//      x=20;
+//      console.log(x)
+// }
+
+Exp -1
+
+if(true){
+  var x=10
+}
+console.log(x)
+--------------
+
+Exp - 2
+
+if(true){
+  let x=10
+}
+console.log(x)
+
+Exp - 3 value change Example
+
+if(true){
+  let x=10
+  x=20
+  console.log(x)
+}
+//console.log(x)
+
+Exp -4 value not change in case const
+
+if(true){
+  const x=10
+  x=20
+  console.log(x)
+}
+//console.log(x)
+--------------------------------------------
+
+imp 'const' mw value hame inilization karna padta hai declaretation ke time par hi 'let' me ase hi rakh sakte hai
+
+---------------------------- FUNCTION-----------------------
+
+// Default function
+// function fun(){ // declare & definition
+//     console.log("Welcome!!!")
+// }
+
+// fun() // calling
+
+-------------------------- paramerized function with console
+
+function fun (name){
+  console.log("Hello"+name)
+}
+fun("Ankush")
+
+--------------------------
+
+
+// paramerized function
+// function fun(name){
+//     return "Hello"+ name
+// }
+
+// const value=fun("Ankush")
+// console.log(value)
+
+
+
+// Arrow function(Most used)----------------> multi function hai to cerlibraces me likhege
+// const result=(name)=>"Hello "+ name
+// console.log(result("Akhilesh"))
+
+
+
+
+// Function with default set parameter
+// function fun(name="Akhilesh"){
+//     return "Hello "+ name
+// }
+//console.log(fun()) // o/p ->Hello Aklish
+// console.log(fun("Ankush")) o/p ->Hello Ankus
+
+// anonymous function-----> eska koe name nahi hota
+// const result=function(name){
+//     return "Hello "+ name
+// }
+
+// console.log(result("Ankush"))
+
+
+// callback function-----> ese function ke parameter me ek aur function pas karte hai aur o bad me run hota hai
+-------------------------------------
+
+function user(name, callback){
+    console.log(name)
+    
+}
+user("Akhil", ()=>console.log("Done!!!!"))   o/p->Akhil
+
+-------------------------------------
+// function user(name, callback){
+//     console.log(name)
+//     callback()
+// }
+// user("Akhil", ()=>console.log("Done!!!!")) o/p->Akhil Done!!!!!!!!!
+
+----------------------------------- Array------------------------
+
+const users=["pankaj","kumar","bharti","softwareEngineer"]
+        
+
+// ForEach(). --> Loop (Printing Data)
+users.forEach(user=>console.log(user))
+
+--------------------------------------------
+const users=["pankaj","kumar","bharti","softwareEngineer"]
+        
+
+// Map(). --> Transform Data
+ const upperCaseUserValue=users.map(u=>u.toLocaleUpperCase())
+ console.log(upperCaseUserValue)
+------------------------------------------------
+const users=["pankaj","kumar","bharti","softwareEngineer"]
+        
+
+// Filter(). ==> Filtering Data
+const filteredValue=users.filter(user=>user==="pankaj")
+console.log(filteredValue)
+------------------------------------------------      Array & Object------------------------
+const users=[
+{
+        id:1,
+        name:"Akhil",
+        email:"Akhil@gmail.com"
+},
+{
+        id:2,
+        name:"ankaj",
+        email:"pankaj@gmail.com"
+},
+{
+        id:3,
+        name:"kumar",
+        email:"kumar@gmail.com"
+}
+
+
+]
+        
+
+users.forEach(user=>console.log(user))
+--------------------------------------------------------------------------
+const users=[
+{
+        id:1,
+        name:"Akhil",
+        email:"Akhil@gmail.com"
+},
+{
+        id:2,
+        name:"pankaj",
+        email:"pankaj@gmail.com"
+},
+{
+        id:3,
+        name:"kumar",
+        email:"kumar@gmail.com"
+}
+
+
+]
+        
+
+users.forEach(user=>console.log(user.name)) ---> yaha user.id bhi likh sakte hai
+
+--------------------------------------------------------
+const users=[
+{
+        id:1,
+        name:"Akhil",
+        email:"Akhil@gmail.com"
+},
+{
+        id:2,
+        name:"pankaj",
+        email:"pankaj@gmail.com"
+},
+{
+        id:3,
+        name:"kumar",
+        email:"kumar@gmail.com"
+}
+
+
+]
+        
+
+const upperCaseUserValue=users.map(u=>u.name.toLocaleUpperCase())
+console.log(upperCaseUserValue)
+
+----------------------------------------------------------------------
+const users=[
+{
+        id:1,
+        name:"Akhil",
+        email:"Akhil@gmail.com"
+},
+{
+        id:2,
+        name:"pankaj",
+        email:"pankaj@gmail.com"
+},
+{
+        id:3,
+        name:"kumar",
+        email:"kumar@gmail.com"
+}
+
+
+]
+        
+
+const filteredValue=users.filter(user=>user.name==="Akhil")
+console.log(filteredValue)
+------------------------------------------------- closer----------------------------------
+// when a function remembers and can use variables 
+// from its outer scope even after the outer 
+// function has finished executing.
+
+function outer(){
+    let count=0
+    //console.log(count)
+    return function inner(){
+        ++count;
+        console.log(count)
+    }
+}
+
+const counter=outer()
+counter() //1
+counter() //2
+------------------------------------------ error handling -------------------------------------
+console.log(num)----> error
+---------------------------
+try{
+//const num=10;
+console.log(num)
+}
+catch(error){
+console.error("An error occured: ",error.message)
+}
+-------------------------------------------------
+try{
+//const num=10;
+console.log(num)
+}
+catch(error){
+console.error("An error occured: ",error.message)
+}fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(response => {
+    console.log(response)
+    return response.json()
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error.message));
+
+    -------------------------------------------------hosting --------------------
+let num=10  // global
+function disp(){
+  console.log(num)
+}
+disp()
+-----------------------
+let num=10  // global
+console.log(num)
+function disp(){
+  let num2=20
+  console.log(num)
+  if(num)
+  {
+    let num2=20  //local varable
+    console.log(num2)
+  }
+  console.log(num2)
+}
+disp()
+-------------------------------- java Script hosting--------------------
+// variable hoisting let & const ko host nahi kar sakte but var ko host kar akte to output undefine aayea
+
+// console.log(num)
+// const num=20
+
+// function hoisting (declaration)
+// disp()
+// function disp(){
+//     console.log("Hello")
+// }
+------------------------------------ esme hosting nahi ho payegi chahe var ke jagah let bhi likh de
+// hello()
+
+// function hoisting (experssion)
+
+// var hello= function(){
+//     console.log("Hiii")
+// }
+
+
+------------------------------------ esme hosting ho jayege
+
+// function hoisting (experssion)
+
+// var hello= function(){
+//     console.log("Hiii")
+// }
+// hello()
+
+--------------------------------------------------------------------------------------------------------------
+
+--------------------------------------      DOM ----------------------------------
+Dom ki help se HTML ko access bhi kar sakte hai modify bhi kar sakte hai puri html ko javascript ke object se control kar sakte hai
+Dom ki help se website ke content ko change karte hai
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red-text{
+      color: red;
+    }
+    #div{
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="heading">welcome to my web</h1>
+  <div id="div">welcome</div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+-------------------------------------------
+
+const hd=document.querySelector("#heading")
+
+hd.classList.add("red-text")
+
+ const p=document.createElement("p")
+ p.textContent="This is paragraPH added by jsvascipt"
+ document.body.appendChild(p)
+
+ const div=document.getElementById("div")
+ div.style.backgroundColor="blue"
+ div.style.color="red"
+
+-------------------------------------------------
+
+1 - google search w3School & webpae ko backword and forword karne ke liye console par code likhege
+
+Exp- window.history.backword & Foword
+
+Exp-2 [alert("Hello")] Exp - 3 [ok & cancle ek sath karne ke liye] [let result=conform("Are you sure")]
+Console me code ko Aage karne ke liye [shift+enter] press karege & type karege [console.log(result)]
+Exp-3 let result=conform("Are you sure")
+      console.log(result)
+
+output [ok-"trur" cancle="false"]
+
+Next Height & Width ke liye [ console.log(window.innerWidth) ]
+
+DOM -> Dom ke help se website ko controle kar sakte hai
+BOM -> Bom ki help se browser ko control kar sakte hai
+
+------------------------------------------------- Event Hemdling-------------------------
+Event respond to user or browser action like (click , typing , loading) using event listener ******* Event listner ek method hota hai jiski help se yah allow karta hai ki ham method ko add kar paye Exp-> click,input EVENT ->mouse-->(click,mouseover),keybord->(key down),form->(submit,input), window-(load)
+EventParagation->(bubling)
+
+Exapmle 1
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Event Handling</title>
+</head>
+<body>
+  <button id="btn">click me</button>
+    
+    <script>
+      const button=document.getElementById("btn")
+      button.addEventListener("click",function(){
+        alert("welcome!!!!!")
+      })
+      
+    </script>
+</body>
+</html>
+
+Example 2 mouse lagane & hatane par action
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Event Handling</title>
+</head>
+<body>
+  <button id="btn">click me</button>
+   
+    <script>
+      const button=document.getElementById("btn")
+      button.addEventListener("click",function(){
+        alert("welcome!!!!!")
+      })
+      button.addEventListener("mouseenter",function(){
+        button.style.backgroundColor="green"
+         button.style.color="white"
+      })
+      button.addEventListener("mouseleave",function(){
+        button.style.backgroundColor=""
+         button.style.color=""
+      })
+      
+    </script>
+</body>
+</html>
+
+Example 3- browser par dikhne & console par data bhejne ke liye code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Event Handling</title>
+</head>
+<body>
+    <form action="" id="form">
+        <input type="text" id="ip" placeholder="Enter Value" required>
+        <button type="submit">submit</button>
+    </form>
+    <script>
+    
+       const form=document.getElementById("form")
+        const ip=document.getElementById("ip")----------->esse console par data dikhega & eske upper form me id diya gaya hai
+
+       form.addEventListener("submit",function(){
+        event.preventDefault()----------------------->esse page automatic reload nahi hoga
+        console.log(ip.value)
+            alert("form submitted successfully!!!")
+       })
+    </script>
+</body>
+</html>
+
+JAVA EVENT HANDLING----> java script ke execution ko bina block kiye huwe
+ asychrones task ko bina handle karte huwe execute karwata hai event loop
+Asnchrones code o hota hao jo run hone me time lagata hai
+
+EXAMPLE---->   
+----------------------------
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Hello");
+}, 2000);
+
+console.log("End");
+----------------------------
+
+JAVA SCRIPT PROMMISE  -----------------> esme resolve or reject hota hai exp---> yadi sabkuch sahi hota to use resolve kar sakte hai yadi kuch gadbad hota to reject bhi kar sakte hai
+
+---- it is an object that represent the result of an asynchrones operation-either restore or redirect
+
+IMP ---> .them .catch simple task ke liye use hota hai
+
+Example-->
+
+console.log("start!!");
+
+const obj = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const PIN=1234
+    if (PIN==1234){
+      resolve("Promise <Resolve>")
+    }
+    else{
+      reject(new Error("Promise <Rejected>"))
+    }
+  }, 4000)
+})
+
+obj.then(res => console.log(res))
+   .catch(err => console.error(err))
+
+console.log("end!!!");
+
+Example 2-->
+
+console.log("start!!");
+
+const obj = new Promise((resolve, reject) => {
+ console.log("Promise <Pending>"); // 👈 yaha dikhega
+
+  setTimeout(() => {
+    const PIN=1234
+    if (PIN==1234){
+      resolve("Promise <Resolve>")
+    }
+    else{
+      reject(new Error("Promise <Rejected>"))
+    }
+  }, 4000)
+})
+
+obj.then(res => console.log(res))
+   .catch(err => console.error(err))
+
+console.log("end!!!");
+
+IMP  -> yadi codition reject hoti hai to uska program
+
+console.log("start!!");
+
+const obj = new Promise((resolve, reject) => {
+ console.log("Promise <Pending>"); // 👈 yaha dikhega
+
+  setTimeout(() => {
+    const PIN=1234
+    if (PIN==1235){
+      resolve("Promise <Resolve>")
+    }
+    else{
+      reject(new Error("Promise <Rejected>"))
+    }
+  }, 4000)
+})
+
+obj.then(res => console.log(res))
+   .catch(err => console.error(err))
+
+console.log("end!!!");
+
+IMP-> TO hamara server cresh na kare ese liye ham .then .catch ka use karte hai jisme ham apne response ko properliy handle kar rahe hai error aayega to catch me lege &  resolve hoga to then me lege
+
+--------------------
+
+console.log("start!!");
+
+const obj = new Promise((resolve, reject) => {
+ console.log("Promise <Pending>"); // 👈 yaha dikhega
+fetch("https://jsonplaceholder.typicode.com/pos/1")
+.then ((response)=>{
+  if(!response.ok){
+    throw new console.error("API Error");
+    
+  }
+  return response.json();
+}).then((data)=>{
+  resolve(data);
+})
+.catch((err)=>{
+  reject(err);
+});
+});
+obj.then((res) => {console.log("Promise <Pending>",res);})
+   .catch((err) => {console.error("Promise <Pending>",err);});
+
+console.log("stop");
+  
+
+             ---------------------- JAVA SCRIPT CALLBACK HELL-------------------------- ESE call back ko avoid karne ke liye [" PROMICE"] laya gaya tha
+kyo ki ye step by step chalta ek dusre par independent hota hai & call back ke upper wala code sahi nahi hai to call cack nahi chalega ese problem ko solve karne ke liye call back hell laya gaya 
+
+Exp--->
+
+function orderFood(customer) {
+   return new Promise((resolve, reject) => {
+        console.log("Order placed by " + customer);
+
+        setTimeout(() => {
+            console.log("Restaurant accepted your order!!");
+
+            setTimeout(() => {
+                console.log("Food is being prepared!");
+
+                setTimeout(() => {
+                    console.log("Your food is out for delivery!");
+                    resolve("Food is delivered, you can enjoy your meal!!!")
+                    reject("Delivered Failed!!")
+                }, 2000)
+            }, 2000)
+        }, 2000)
+    })
+}
+
+// then(),catch(). --> easy task. ===> Promise error handling mechanism
+// async await with try.catch(). --> complex task.  ===>  Promise error handling mechanism
+
+async function runOrder() {
+    try {
+       const result= await orderFood("Ankush")
+       console.log(result);
+    } catch (error) {
+        console.log("Error ",error);
+    }
+}
+runOrder()
+--------------------------------------------------------------------------------------
+mongodb+srv://pankajkumar100995_db_user:<db_password>@cluster0.itdhtxp.mongodb.net/
+
+pankajkumar100995_db_user     IHDRIWTTpxnq0ZON
+--------------------------------------------------------------------------------------
+                                      M E R N
+--------------------------------------------------------------------------------------
+1- Project create karege & Usme Frontend & Backend Folder banayege 2- Frontend Application lo setup karege [npm create vite@latest.] esme . es liye lagaya gaya ki ese react folder me react Application bana dena hai 3-> NOW backend ko setup karege NOW Express JS ka website Open karege & Getting start par jayege Installing par jayege to Command Hoga [npm init] than -> package name aayega to -> full stack project de dege * baki sab by default * & Description : this is js cource de dege baki sab by default & Keyword & Licence me Apna name baki sab by defacult & Package .json me hamara sara dependency rahta hai
+4--> Express ko install karege command [npm install express] & Hello word ka code likhege
+Example-->
+
+const express = require('express');
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
+NOW CODE KO RUN KAREGE TO COMMAND CHALAYEGE [node index.js]
+NOW TELVENT CSS INSTALL KAREGE
+NOW FRONTEND ME TAILVENE CSS COMMAND CHALAYEGE
+
+                           --------------------------- APP.JSX------------------------
+
+import React from 'react';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Home from './components/Home';
+import { Routes, Route } from 'react-router-dom';
+
+
+
+const App = () => {
+  console.log("welcome");
+  return (
+    <div>
+       <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+
+    </Routes>
+    </div>
+  );
+}
+
+export default App;
+
+
+ --------------------------- Signup.JSX------------------------
+
+import { useForm } from "react-hook-form"
+import { Link,useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+
+function Signup() {
+   const navigate=useNavigate()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = async(data) => {
+    console.log(data);
+    try {
+        if(data.password !== data.confirmPassword){
+            alert("Password do not match")
+            return
+        }
+
+       const res= await axios.post('http://localhost:4001/user/signup',{
+            username:data.username,
+            email:data.email,
+            password:data.password,
+            confirmPassword:data.confirmPassword
+        })
+        alert(res.data.message)
+        navigate("/login")
+
+    } catch (error) {
+        if(error.response){
+            alert(error.response.data.error)
+        }else{
+            alert("something went wrong!")
+        }
+    }
+  }
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div  className=' min-h-screen bg-gray-200 flex items-center justify-center'>
+      <div className=' bg-gray-100 w-full max-w-md p-8 rounded-2xl shadow-md'>
+        {/* Heading */}
+        <h1 className=' text-3xl font-semibold text-center mb-8'>Signup</h1>
+                    {/* Username */}
+                <div className='mb-5'>
+                    <label className=' text-gray-700 font-medium' >Username</label>
+                    <input {...register("username", { required: true })} type="text" placeholder='Enter username' className=' w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300' />
+                     {errors.username && <span className=" text-red-600 font-semibold text-sm">This field is required</span>}
+                </div>
+        {/* Email */}
+        <div className='mb-5'>
+                    <label className=' text-gray-700 font-medium' >Email</label>
+                    <input  {...register("email", { required: true })} type="email" placeholder='Enter email' className=' w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300' />
+                    {errors.email && <span className=" text-red-600 font-semibold text-sm">This field is required</span>}
+                </div>
+        {/* Password */}
+                <div className='mb-5'>
+                    <label className=' text-gray-700 font-medium' >Password</label>
+                    <input {...register("password", { required: true })} type="password" placeholder='Enter Password' className=' w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300' />
+                    {errors.password && <span className=" text-red-600 font-semibold text-sm">This field is required</span>}
+                </div>
+{/* Confirm Password */}
+                <div className='mb-5'>
+                    <label className=' text-gray-700 font-medium' >Confirm Password</label>
+                    <input  {...register("confirmPassword")} type="password" placeholder='Re-type Password' className=' w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300' />
+                    {errors.confirmPassword && <span className=" text-red-600 font-semibold text-sm">This field is required</span>}
+                </div>
+
+        {/* Button */}
+                <button type='submit' className=' w-full bg-blue-500 text-white py-3 rounded-xl text-lg font-medium hover:bg-blue-700 transition'>Login</button>
+        {/* Signup Navigation */}
+                <p className=' text-center mt-5 text-gray-700'>
+                    New account?{" "}
+                    <Link to="/login" className=' text-blue-500 cursor-pointer hover:underline'>Login</Link>
+                </p>
+      </div>
+    </div>
+    </form>
+  )
+}
+
+export default Signup
+
+
+                           -------------------------- LOGIN.JSX---------------------------
+
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+
+function Login() {
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    try {
+      const res = await axios.post("http://localhost:4001/user/login", {
+        email: data.email,
+        password: data.password,
+      });
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+      navigate("/");
+      alert(res.data.message);
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.error);
+      } else {
+        alert("something went wrong!");
+      }
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className=" min-h-screen bg-gray-200 flex items-center justify-center">
+        <div className=" bg-gray-100 w-full max-w-md p-8 rounded-2xl shadow-md">
+          {/* Heading */}
+          <h1 className=" text-3xl font-semibold text-center mb-8">Login</h1>
+
+          {/* Email */}
+          <div className="mb-5">
+            <label className=" text-gray-700 font-medium">Email</label>
+            <input
+              {...register("email", { required: true })}
+              type="email"
+              placeholder="Enter email"
+              className=" w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            />
+            {errors.email && (
+              <span className=" text-red-600 font-semibold text-sm">
+                This field is required
+              </span>
+            )}
+          </div>
+          {/* Password */}
+          <div className="mb-5">
+            <label className=" text-gray-700 font-medium">Password</label>
+            <input
+              {...register("password", { required: true })}
+              type="password"
+              placeholder="Enter Password"
+              className=" w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            />
+            {errors.password && (
+              <span className=" text-red-600 font-semibold text-sm">
+                This field is required
+              </span>
+            )}
+          </div>
+          {/* Button */}
+          <button
+            type="submit"
+            className=" w-full bg-blue-500 text-white py-3 rounded-xl text-lg font-medium hover:bg-blue-700 transition"
+          >
+            Login
+          </button>
+          {/* Signup Navigation */}
+          <p className=" text-center mt-5 text-gray-700">
+            New account?{" "}
+            <Link
+              to="/signup"
+              className=" text-blue-500 cursor-pointer hover:underline"
+            >
+              Signup here
+            </Link>
+          </p>
+        </div>
+      </div>
+    </form>
+  );
+}
+
+export default Login;
+
+
+                      ---------------------------  Home.jsx ------------------------
+
+import React from 'react';
+
+function Home() {
+  return (
+    <div className='flex h-screen items-center justify-center text-3xl'>
+      Home
+    </div>
+  );
+}
+
+export default Home;
+
+
+
